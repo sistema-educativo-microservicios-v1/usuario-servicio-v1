@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "5277f5fd-515b-4c5c-bf48-e8d24e2f9362",
+		"name": "java-parcial-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33876739",
+		"_collection_link": "https://bloodknot.postman.co/workspace/bloodknot-postman-Workspace~bba75b61-0998-45af-880d-5fd04cfa8b8b/collection/33876739-5277f5fd-515b-4c5c-bf48-e8d24e2f9362?action=share&source=collection_link&creator=33876739"
+	},
+	"item": [
+		{
+			"name": "microservicios-user-auth",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\r\n//   \"email\": \"estudiante@mail.com\",\r\n//   \"password\": \"123456\"\r\n// }\r\n\r\n{\r\n  \"email\": \"estudiante-test-2@mail.com\",\r\n  \"password\": \"clave123\",\r\n  \"tipo\": \"ESTUDIANTE\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"profesor-test-1@mail.com\",\r\n  \"password\": \"clave123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test-admin",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTkwMSwiZXhwIjoxNzQ0MTg1OTAxfQ.gEJMre5tU-88h0JV1jDcrxt_9LdqbfH0mMLJeIrftaB0S1DtwnGUJc9TXFNEDOW0tbAlT03oWdtRcAENNjngEA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/admin/secret",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"secret"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validate-token",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTkwMSwiZXhwIjoxNzQ0MTg1OTAxfQ.gEJMre5tU-88h0JV1jDcrxt_9LdqbfH0mMLJeIrftaB0S1DtwnGUJc9TXFNEDOW0tbAlT03oWdtRcAENNjngEA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/auth/validate-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"validate-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "Get one users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0NTU4MywiZXhwIjoxNzQ0MTgxNTgzfQ.iH-mt6zz0YkumkJ0yYtepwzWGb_p7AWsj2oIDjSMxzWvCmlVlIKrX-5tpdia7hVUBlsfT3i4NJEQMRUdafVneg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDAwMDgwMCwiZXhwIjoxNzQ0MDM2ODAwfQ.VzuEPzW63MOFoN3gg4aTQu2P244eUYqD8xLGI_T7KtfvxhC-g7yKxv5WTaFOXcMI3Hje2abWQZjV9bSaFLD6Zg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create-user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTkwMSwiZXhwIjoxNzQ0MTg1OTAxfQ.gEJMre5tU-88h0JV1jDcrxt_9LdqbfH0mMLJeIrftaB0S1DtwnGUJc9TXFNEDOW0tbAlT03oWdtRcAENNjngEA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"estudiante 2\",\r\n    \"email\":\"juan.sebas-722@hotmail.com\",\r\n    \"password\":\"hola mundio\",\r\n    \"tipo\":\"ESTUDIANTE\", // ESTUDIANTE PROFESOR\r\n    \"authUsuario\": {\r\n    \"id\":19\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "microservicio-materias-crud",
+			"item": [
+				{
+					"name": "crear-asignatura",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTNAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0ODg1MiwiZXhwIjoxNzQ0MTg0ODUyfQ.YaqVRIbsQCCUjU0CuHvIvpZhxTlqtxkwn4MsV0kfq574iIyZ3NZBXwku3Se2qyLqlXnXJxQvxRPR7Qo0DbgNlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"matematicas\",\r\n  \"descripcion\": \"Álgebra y cálculo diferencial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/asignaturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"asignaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener-asignatura-by-id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearear eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTNAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0ODg1MiwiZXhwIjoxNzQ0MTg0ODUyfQ.YaqVRIbsQCCUjU0CuHvIvpZhxTlqtxkwn4MsV0kfq574iIyZ3NZBXwku3Se2qyLqlXnXJxQvxRPR7Qo0DbgNlA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/asignaturas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"asignaturas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener-todas-asignaturas",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTNAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0ODg1MiwiZXhwIjoxNzQ0MTg0ODUyfQ.YaqVRIbsQCCUjU0CuHvIvpZhxTlqtxkwn4MsV0kfq574iIyZ3NZBXwku3Se2qyLqlXnXJxQvxRPR7Qo0DbgNlA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/asignaturas?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"asignaturas"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar-asignatura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Matemáticas II\",\r\n  \"descripcion\": \"Cálculo integral y ecuaciones\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/asignaturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"asignaturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar-asignatura Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Matemáticas II\",\r\n  \"descripcion\": \"Cálculo integral y ecuaciones\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/asignaturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"asignaturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "microservicios-matriculas",
+			"item": [
+				{
+					"name": "get-all",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTNAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTY5NCwiZXhwIjoxNzQ0MTg1Njk0fQ.bYwcVY4N0Bd29GKjV9u6Ic3uhc6gJrkbUIZ-7NrAwDtxjh2cLnYHMz562y-Ub-cgeQHpHNpTPtG7jbDkSjbZ8w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/matriculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"matriculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar matricula",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTkwMSwiZXhwIjoxNzQ0MTg1OTAxfQ.gEJMre5tU-88h0JV1jDcrxt_9LdqbfH0mMLJeIrftaB0S1DtwnGUJc9TXFNEDOW0tbAlT03oWdtRcAENNjngEA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estudianteId\": 18,\r\n  \"profesorId\": 15,\r\n  \"materiaId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/matriculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"matriculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desasignar matricula Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9mZXNvci10ZXN0LTFAbWFpbC5jb20iLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc0NDE0OTkwMSwiZXhwIjoxNzQ0MTg1OTAxfQ.gEJMre5tU-88h0JV1jDcrxt_9LdqbfH0mMLJeIrftaB0S1DtwnGUJc9TXFNEDOW0tbAlT03oWdtRcAENNjngEA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estudianteId\": 18,\r\n  \"profesorId\": 15,\r\n  \"materiaId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/matriculas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"matriculas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

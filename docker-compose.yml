@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+
+  asignaturas-service:
+    build: ./asignaturas-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+      - auth-service
+
+  matriculas-service:
+    build: ./matriculas-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+      - auth-service
+      - asignaturas-service
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
