@@ -51,6 +51,14 @@ Las ejecutaremos con:
 | POST   | /auth/register     | Registra un nuevo usuario         |
 | POST   | /auth/login        | Inicia sesión y genera token      |
 | GET    | /auth/validate-token | Valida el token recibido        |
+| GET    | /admin/secret         | Devuelve datos restringidos para administradores |
+| GET    | /usuarios             | Obtiene todos los usuarios registrados           |
+| GET    | /usuarios/{id}        | Obtiene un usuario por su ID                     |
+| POST   | /usuarios             | Crea un nuevo usuario con rol y vínculo de auth  |
+| GET    | /auth/validate-token  | Valida el token recibido        |
+
+** La interaccion con los demás microservicios debe ser con el ID de usuarios, el ID generado por AUTH solo se usa cuando se crea un usuario
+
 
 ---
 
